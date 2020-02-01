@@ -5,4 +5,4 @@ Installing ROS Melodic on Ubuntu 18.04
 
     git clone https://github.com/Interactics/install_ROS_Melodic.git
     chmod +x installROSMelodic.sh
-    bash ./installROSMelodic.sh
+    sudo bash ./installROSMelodic.sh
