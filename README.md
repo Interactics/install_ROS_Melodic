@@ -1,7 +1,7 @@
 # install_ROS_Melodic
 Installing ROS Melodic on Ubuntu 18.04
 
-These files will install ROS Meodic Morenia on Ubuntu 18.04 and catkin_tools
+This file will install ROS Meodic Morenia on Ubuntu 18.04 and catkin_tools
 
 ## installROSMelodic.sh
 
