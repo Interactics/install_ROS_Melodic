@@ -44,6 +44,7 @@ echo "Create Catkin_ws dir and Build"
 mkdir -p $HOME/$NAME_CATKIN_WS/src
 cd $HOME/$NAME_CATKIN_WS/
 catkin init
+source $HOME/.bashrc
 cd $HOME/$NAME_CATKIN_WS
 catkin build
 
