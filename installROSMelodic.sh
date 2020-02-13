@@ -46,6 +46,7 @@ cd $HOME/$NAME_CATKIN_WS/
 catkin init
 source $HOME/.bashrc
 
+sudo chown -R $USER: $HOME
 cd $HOME/$NAME_CATKIN_WS
 catkin build
 
