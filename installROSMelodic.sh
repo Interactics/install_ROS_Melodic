@@ -45,8 +45,12 @@ mkdir -p $HOME/$NAME_CATKIN_WS/src
 cd $HOME/$NAME_CATKIN_WS/
 catkin init
 source $HOME/.bashrc
+
 cd $HOME/$NAME_CATKIN_WS
 catkin build
+
+sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
+sh -c "echo \"source ~/$NAME_CATKIN_WS/devel/setup.bash\" >> ~/.bashrc"
 
 #Hotkey setting 
 echo "Bashrc setting"
@@ -61,10 +65,10 @@ sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias cw='cd ~/$NAME_CATKIN_WS'\" >> ~/.bashrc"
 sh -c "echo \"alias cs='cd ~/$NAME_CATKIN_WS/src'\" >> ~/.bashrc"
 sh -c "echo \"alias cm='cd ~/$NAME_CATKIN_WS && catkin build'\" >> ~/.bashrc"
-sh -c "echo \"source ~/$NAME_CATKIN_WS/devel/setup.bash\" >> ~/.bashrc"
 
 sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
-sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
+
+
 
 source $HOME/.bashrc
 
