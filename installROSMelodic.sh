@@ -48,7 +48,7 @@ source $HOME/.bashrc
 
 sudo chown -R $USER: $HOME
 cd $HOME/$NAME_CATKIN_WS
-catkin build
+catkin_make
 
 sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
 sh -c "echo \"source ~/$NAME_CATKIN_WS/devel/setup.bash\" >> ~/.bashrc"
@@ -68,8 +68,6 @@ sh -c "echo \"alias cs='cd ~/$NAME_CATKIN_WS/src'\" >> ~/.bashrc"
 sh -c "echo \"alias cm='cd ~/$NAME_CATKIN_WS && catkin build'\" >> ~/.bashrc"
 
 sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
-
-
 
 source $HOME/.bashrc
 
