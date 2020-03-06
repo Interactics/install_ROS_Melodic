@@ -30,44 +30,43 @@ rosdep update
 
 #Env Setting"
 echo "Environment setup"
-sh -c "echo \"source /opt/ros/$ROS_VER/setup.bash\" >> ~/.bashrc"
 source $HOME/.bashrc
 
 #Install Dep for catkin-tools
 echo "Install Catkin tools dependencies"
 sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential 
-sudo apt install -y python-catkin-tools
 sudo apt install -y python-pip
 
 #Create catkin_ws and build 
 echo "Create Catkin_ws dir and Build"
 mkdir -p $HOME/$NAME_CATKIN_WS/src
 cd $HOME/$NAME_CATKIN_WS/
-catkin init
+catkin_init_workspace
 source $HOME/.bashrc
 
-sudo chown -R $USER: $HOME
 cd $HOME/$NAME_CATKIN_WS
 catkin_make
 
-sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
+#Set Source
+sh -c "echo \"source /opt/ros/$ROS_VER/setup.bash\" >> ~/.bashrc"
 sh -c "echo \"source ~/$NAME_CATKIN_WS/devel/setup.bash\" >> ~/.bashrc"
 
-#Hotkey setting 
+#Set ROS Network
+sh -c "echo \"export ROS_HOSTNAME=localhost" >> ~/.bashrc"
+sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
+
+#Set Aalias command
+sh -c "echo \"alias eb='vi ~/.bashrc'\" >> ~/.bashrc"
+sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
+sh -c "echo \"alias cw='cd ~/$NAME_CATKIN_WS'\" >> ~/.bashrc"
+sh -c "echo \"alias cs='cd ~/$NAME_CATKIN_WS/src'\" >> ~/.bashrc"
+sh -c "echo \"alias cm='cd ~/$NAME_CATKIN_WS && catkin_make'\" >> ~/.bashrc"
 echo "Bashrc setting"
 echo "  eb : vi $HOME/.bashrc"
 echo "  sb : source $HOME/.bashrc"
 echo "  cw : cd $HOME/Catkin_ws"
 echo "  cs : Entering $HOME/Catkin_ws/src"
-echo "  cm : run [catkin build] at $HOME/catkin_ws"
-
-sh -c "echo \"alias eb='vi ~/.bashrc'\" >> ~/.bashrc"
-sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
-sh -c "echo \"alias cw='cd ~/$NAME_CATKIN_WS'\" >> ~/.bashrc"
-sh -c "echo \"alias cs='cd ~/$NAME_CATKIN_WS/src'\" >> ~/.bashrc"
-sh -c "echo \"alias cm='cd ~/$NAME_CATKIN_WS && catkin build'\" >> ~/.bashrc"
-
-sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
+echo "  cm : run [catkin_make] at $HOME/catkin_ws"
 
 source $HOME/.bashrc
 
