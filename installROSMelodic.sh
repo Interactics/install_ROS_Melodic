@@ -6,7 +6,7 @@ echo ""
 echo "---------------------------------------------------------"
 echo "-[INSTALLATION ROS Melodic FOR Ubuntu 18.04 (Bionic)    -"
 echo "-Catkin workspace -> ~/catkin_ws                        -"
-echo "-Install - ROS Melodic, Catkin_Tools,                   -"
+echo "-Install - ROS Melodic                                  -"
 echo "-CONTINUE -> PRESS [ENTER], CANCLE -> PRESS [CTRL]+[C]  -"
 echo "---------------------------------------------------------"
 read
