@@ -63,7 +63,7 @@ grep -q -F 'source ~/catkin_ws/devel/setup.bash' ~/.bashrc || echo "source ~/cat
 
 
 #Set ROS Network
-sh -c "echo \"export ROS_HOSTNAME=localhost" >> ~/.bashrc
+sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
 sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
 
 #Set Aalias command
