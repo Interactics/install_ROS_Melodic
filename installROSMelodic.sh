@@ -35,7 +35,9 @@ sudo apt install -y ros-melodic-desktop-full
 #initilaize rosdep and update
 sudo sh -c "rosdep init"
 sudo apt-get install python-rosdep -y
-rosdep update
+
+sudo rosdep update
+rosdep init
 
 grep -q -F 'source /opt/ros/melodic/setup.bash' ~/.bashrc || echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 
