@@ -52,12 +52,13 @@ sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool 
 
 
 #Create catkin_ws 
+sudo pip install -U catkin_tools
+
 echo "Create Catkin_ws Dir"
 mkdir -p $HOME/$NAME_CATKIN_WS/src
 cd $HOME/$NAME_CATKIN_WS/src
-catkin_init_workspace
 cd $HOME/$NAME_CATKIN_WS
-catkin_make
+catkin build
 
 
 #Set Source
@@ -73,7 +74,7 @@ sh -c "echo \"alias eb='vi ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias cw='cd ~/$NAME_CATKIN_WS'\" >> ~/.bashrc"
 sh -c "echo \"alias cs='cd ~/$NAME_CATKIN_WS/src'\" >> ~/.bashrc"
-sh -c "echo \"alias cm='cd ~/$NAME_CATKIN_WS && catkin_make'\" >> ~/.bashrc"
+sh -c "echo \"alias cm='cd ~/$NAME_CATKIN_WS && catkin build'\" >> ~/.bashrc"
 echo "Bashrc setting"
 echo "  eb : vi $HOME/.bashrc"
 echo "  sb : source $HOME/.bashrc"
